@@ -34,7 +34,7 @@ def test_health_endpoint():
 
 def test_hash_invalid_algorithm():
     response = client.post("/hash", json={"password": "test", "algorithm": "md5"})
-    assert response.status_code == 400
+    assert response.status_code == 422
 
 
 def test_verify_unknown_format():
